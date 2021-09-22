@@ -1,0 +1,108 @@
+body {
+  background-color: #121212 !important;
+}
+
+#head-txt {
+  font-family: "New Tegomin", serif;
+  color: rgb(62, 250, 62);
+  font-size: calc(12px + 5vw);
+}
+#img-frame {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+button {
+  position: relative;
+  overflow: hidden;
+  transition: background 400ms;
+  color: #fff;
+  background-color: #6200ee;
+  padding: 1rem 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  outline: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); /* black with 30% opacity */
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #7418f5;
+}
+
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+#ico {
+  width: 100px;
+  height: 100px;
+}
+/*
+#shell-btn {
+    margin-top: 5%;
+}
+
+*/
+#webcam-img {
+  width: 35%;
+}
+
+@media (min-width: 801px) {
+  @keyframes slideInFromTop {
+    0% {
+      top: -20em;
+      width: 22%;
+    }
+    100% {
+      width: 22%;
+      top: 4em;
+      right: 1em;
+      position: fixed;
+    }
+  }
+
+  #webcam-img {
+    animation: 2500ms ease-out -1s forwards slideInFromTop;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #img-frame {
+    /*
+        width: 359px;
+        height: 280px;
+        */
+    size: 100%;
+  }
+  .p-5 {
+    padding: 1rem !important;
+  }
+  .my-5 {
+    margin-bottom: 1rem !important;
+  }
+
+  .my-5 {
+    margin-top: 1rem !important;
+  }
+  #webcam-img {
+    width: 35%;
+  }
+}

