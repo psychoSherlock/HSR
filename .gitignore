@@ -1,4 +1,5 @@
 static/record/snap.png
 modules/__pycache__/camera.cpython-39.pyc
-static/record/screen.png
+static/record/
 modules/__pycache__/__init__.cpython-39.pyc
+.env/
